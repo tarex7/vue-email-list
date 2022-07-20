@@ -1,7 +1,6 @@
 const app = new Vue({
   el: "#root",
   data: {
-    email: "",
     emailList: [],
   },
   created() {
@@ -9,8 +8,7 @@ const app = new Vue({
       axios
         .get("https://flynn.boolean.careers/exercises/api/random/mail")
         .then((res) => {
-          this.email = res.data.response;
-          this.emailList.push(this.email);
+          this.emailList.push(res.data.response);
         });
     }
   },
